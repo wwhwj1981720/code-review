@@ -1,0 +1,151 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d9486d3, pid=7520, tid=6148
+#
+# Java VM: Java HotSpot(TM) Client VM (11.3-b02 mixed mode windows-x86)
+# Problematic frame:
+# V  [jvm.dll+0x986d3]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x46e95000):  VMThread [stack: 0x46f20000,0x46f70000] [id=6148]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000008
+
+Registers:
+EAX=0x00000008, EBX=0x0989341c, ECX=0x46f6fc38, EDX=0x6da90a08
+ESP=0x46f6fa60, EBP=0x46f6fac0, ESI=0x09893418, EDI=0x46f6fc38
+EIP=0x6d9486d3, EFLAGS=0x00010283
+
+Top of Stack: (sp=0x46f6fa60)
+0x46f6fa60:   429ecd08 09893418 6d966753 09893418
+0x46f6fa70:   09893410 09893428 09893568 46f6fac0
+0x46f6fa80:   429ecb90 429ecd0c 6da2e321 09893410
+0x46f6fa90:   46f6fac0 09893400 46e8ef78 09893400
+0x46f6faa0:   09893568 6da2e1ab 09893400 0000005a
+0x46f6fab0:   0988f400 09893568 46f6fac0 48638c20
+0x46f6fac0:   6daa802c 46e8ef78 078a0000 46f6fc38
+0x46f6fad0:   6da2e0d5 09893400 0000005a 0988f400 
+
+Instructions: (pc=0x6d9486d3)
+0x6d9486c3:   24 08 8b 06 85 c0 57 8b f9 74 55 3b 47 1c 73 50
+0x6d9486d3:   8b 08 83 e1 03 80 f9 03 75 1f 8a 0d dd 15 ac 6d 
+
+
+Stack: [0x46f20000,0x46f70000],  sp=0x46f6fa60,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x986d3]
+
+VM_Operation (0x484bf9b8): GenCollectForAllocation, mode: safepoint, requested by thread 0x48621c00
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00847800 JavaThread "DestroyJavaVM" [_thread_blocked, id=7172, stack(0x008e0000,0x00930000)]
+  0x4737dc00 JavaThread "Thread-810" [_thread_blocked, id=5892, stack(0x47c00000,0x47c50000)]
+  0x48621c00 JavaThread "Thread-772" [_thread_blocked, id=7244, stack(0x48480000,0x484d0000)]
+  0x46edc400 JavaThread "Thread-769" [_thread_blocked, id=7504, stack(0x47d40000,0x47d90000)]
+  0x47407400 JavaThread "Thread-623" [_thread_blocked, id=740, stack(0x481b0000,0x48200000)]
+  0x4861fc00 JavaThread "Thread-295" [_thread_blocked, id=6904, stack(0x482a0000,0x482f0000)]
+  0x47450000 JavaThread "Thread-117" [_thread_blocked, id=5184, stack(0x47660000,0x476b0000)]
+  0x46ed2400 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=3092, stack(0x472c0000,0x47310000)]
+  0x46ec5c00 JavaThread "CompilerThread0" daemon [_thread_blocked, id=8016, stack(0x47270000,0x472c0000)]
+  0x46ec2000 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=1300, stack(0x47220000,0x47270000)]
+  0x46ec0800 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=5188, stack(0x471d0000,0x47220000)]
+  0x46ebe400 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=5276, stack(0x47180000,0x471d0000)]
+  0x46eaf800 JavaThread "Attach Listener" daemon [_thread_blocked, id=8184, stack(0x47060000,0x470b0000)]
+  0x46ec6400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=1448, stack(0x47010000,0x47060000)]
+  0x46e9d000 JavaThread "Finalizer" daemon [_thread_blocked, id=7780, stack(0x46fc0000,0x47010000)]
+  0x46e98800 JavaThread "Reference Handler" daemon [_thread_blocked, id=7836, stack(0x46f70000,0x46fc0000)]
+
+Other Threads:
+=>0x46e95000 VMThread [stack: 0x46f20000,0x46f70000] [id=6148]
+  0x46ed4c00 WatcherThread [stack: 0x47310000,0x47360000] [id=7496]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00846508] UNKNOWN - owner thread: 0x46e95000
+[0x00846968] UNKNOWN - owner thread: 0x48621c00
+
+Heap
+ def new generation   total 72576K, used 63110K [0x029e0000, 0x078a0000, 0x078a0000)
+  eden space 64512K,  97% used [0x029e0000, 0x06781820, 0x068e0000)
+  from space 8064K,   0% used [0x070c0000, 0x070c0000, 0x078a0000)
+  to   space 8064K,   0% used [0x068e0000, 0x068e8408, 0x070c0000)
+ tenured generation   total 967936K, used 32717K [0x078a0000, 0x429e0000, 0x429e0000)
+   the space 967936K,   3% used [0x078a0000, 0x09893568, 0x09893600, 0x429e0000)
+ compacting perm gen  total 12288K, used 2760K [0x429e0000, 0x435e0000, 0x469e0000)
+   the space 12288K,  22% used [0x429e0000, 0x42c92318, 0x42c92400, 0x435e0000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	e:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\bin\javaw.exe
+0x7c920000 - 0x7c9b3000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c91e000 	C:\WINDOWS\system32\kernel32.dll
+0x77da0000 - 0x77e49000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e50000 - 0x77ee3000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77fc0000 - 0x77fd1000 	C:\WINDOWS\system32\Secur32.dll
+0x77d10000 - 0x77da0000 	C:\WINDOWS\system32\USER32.dll
+0x77ef0000 - 0x77f39000 	C:\WINDOWS\system32\GDI32.dll
+0x76300000 - 0x7631d000 	C:\WINDOWS\system32\IMM32.DLL
+0x62c20000 - 0x62c29000 	C:\WINDOWS\system32\LPK.DLL
+0x73fa0000 - 0x7400b000 	C:\WINDOWS\system32\USP10.dll
+0x7c340000 - 0x7c396000 	e:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\msvcr71.dll
+0x6d8b0000 - 0x6db06000 	e:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\client\jvm.dll
+0x76b10000 - 0x76b3a000 	C:\WINDOWS\system32\WINMM.dll
+0x6d340000 - 0x6d348000 	e:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\hpi.dll
+0x76bc0000 - 0x76bcb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d430000 - 0x6d459000 	e:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\jdwp.dll
+0x6d750000 - 0x6d756000 	e:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\npt.dll
+0x6d860000 - 0x6d86c000 	e:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\verify.dll
+0x6d3e0000 - 0x6d3ff000 	e:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\java.dll
+0x6d8a0000 - 0x6d8af000 	e:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\zip.dll
+0x6d2b0000 - 0x6d2b7000 	e:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\dt_socket.dll
+0x71a20000 - 0x71a37000 	C:\WINDOWS\system32\WS2_32.dll
+0x77be0000 - 0x77c38000 	C:\WINDOWS\system32\msvcrt.dll
+0x71a10000 - 0x71a18000 	C:\WINDOWS\system32\WS2HELP.dll
+0x719c0000 - 0x719fe000 	C:\WINDOWS\System32\mswsock.dll
+0x76ef0000 - 0x76f17000 	C:\WINDOWS\system32\DNSAPI.dll
+0x76f80000 - 0x76f88000 	C:\WINDOWS\System32\winrnr.dll
+0x76f30000 - 0x76f5c000 	C:\WINDOWS\system32\WLDAP32.dll
+0x64000000 - 0x64021000 	C:\Program Files\Bonjour\mdnsNSP.dll
+0x76d30000 - 0x76d48000 	C:\WINDOWS\system32\Iphlpapi.dll
+0x76f90000 - 0x76f96000 	C:\WINDOWS\system32\rasadhlp.dll
+0x60fd0000 - 0x61025000 	C:\WINDOWS\system32\hnetcfg.dll
+0x71a00000 - 0x71a08000 	C:\WINDOWS\System32\wshtcpip.dll
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:4258 -Xms1024M -Xmx1024M -Dfile.encoding=UTF-8 
+java_command: unicom.StartReadMd E:\\软件开发包 all
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_10
+CLASSPATH=C:\Program Files\Java\jdk1.6.0_10\lib\tools.jar;C:\Program Files\Java\jdk1.6.0_10\lib\dt.jar;.
+PATH=e:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin;e:/Program Files/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin/client;e:/Program Files/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin;e:/Program Files/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/lib/i386;C:\Program Files\Java\jdk1.6.0_10\bin;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\ThinkPad Wireless LAN Adapter Software;C:\Program Files\Common Files\Adobe\AGL;E:\Program Files\MySQL\MySQL Server 5.1\bin;e:\Program Files\SSH Communications Security\SSH Secure Shell
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 3
+
+CPU:total 4 (8 cores per cpu, 2 threads per core) family 6 model 10 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, ht
+
+Memory: 4k page, physical 2097151k(692560k free), swap 4194303k(1510780k free)
+
+vm_info: Java HotSpot(TM) Client VM (11.3-b02) for windows-x86 JRE (1.6.0_13-b03), built on Mar  9 2009 01:15:24 by "java_re" with MS VC++ 7.1
+
+time: Mon Apr 21 17:23:43 2014
+elapsed time: 207 seconds
+
